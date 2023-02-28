@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Website Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Website Hub</h1>
+        <p>Welcome to my website hub. Here you will find links to all of my other websites.</p>
+        <ul>
+            <li><a href="https://www.website1.com" onclick="redirect(event)">Website 1</a></li>
+            <li><a href="https://www.website2.com" onclick="redirect(event)">Website 2</a></li>
+            <li><a href="https://www.website3.com" onclick="redirect(event)">Website 3</a></li>
+            <!-- Add more websites as needed -->
+        </ul>
+    </div>
+
+    <script>
+        function redirect(event) {
+            event.preventDefault();
+            var confirmRedirect = confirm("Do you want to go to this website?");
+            if (confirmRedirect) {
+                window.location.href = event.target.href;
+            }
+        }
+
+        // Smooth scrolling effect
+        var scroll = new SmoothScroll('a[href*="#"]', {
+            speed: 800,
+            speedAsDuration: true
+        });
+    </script>
+</body>
+</html>
