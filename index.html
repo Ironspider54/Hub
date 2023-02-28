@@ -3,111 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Website Hub</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        h1 {
-            text-align: center;
-        }
-        p {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        a {
-            text-decoration: none;
-            color: #333;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Light mode styles */
-        .light {
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        /* Dark mode styles */
-        .dark {
-            background-color: #333;
-            color: #fff;
-        }
-
-        /* Toggle styles */
-        .toggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-        .toggle label {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-        }
-        .toggle input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        .toggle span {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            border-radius: 34px;
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
-        .toggle span:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: #fff;
-            border-radius: 50%;
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
-        .toggle input:checked + span {
-            background-color: #2196F3;
-        }
-        .toggle input:checked + span:before {
-            -webkit-transform: translateX(26px);
-            -ms-transform: translateX(26px);
-            transform: translateX(26px);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="light">
     <div class="container">
         <h1>Website Hub</h1>
         <p>Welcome to my website hub. Here you will find links to all of my other websites.</p>
         <ul>
-            <li><a href="#" onclick="redirect('https://ironspider54.github.io')">Portfolio</a></li>
+            <li><a href="#" onclick="redirect('https://www.website1.com')">Website 1</a></li>
             <li><a href="#" onclick="redirect('https://www.website2.com')">Website 2</a></li>
             <li><a href="#" onclick="redirect('https://www.website3.com')">Website 3</a></li>
             <!-- Add more websites as needed -->
@@ -118,27 +21,10 @@
             <label>
                 <input type="checkbox" onclick="toggleMode()">
                 <span></span>
-                
-    <script>
-        function redirect(url) {
-            if (confirm("Do you want to redirect to " + url + "?")) {
-                window.location.href = url;
-            }
-        }
+            </label>
+        </div>
 
-        // Smooth scrolling to internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+        <script src="app.js"></script>
+    </div>
 </body>
 </html>
-           
-
-
