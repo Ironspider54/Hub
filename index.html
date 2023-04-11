@@ -1,28 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Chizurum Website Hub</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<script defer src="app.js"></script>
+	<title>My Hub Website</title>
+	<style>
+		body {
+			background-color: #f0f0f0; /* default light mode background color */
+			color: #333;
+			font-family: Arial, sans-serif;
+			transition: background-color 0.5s ease; /* add transition effect for dark mode */
+		}
+		.dark-mode {
+			background-color: #333; /* dark mode background color */
+			color: #f0f0f0;
+		}
+		.link {
+			display: block;
+			margin-bottom: 10px;
+			padding: 10px;
+			border-radius: 5px;
+			font-size: 16px;
+			font-weight: bold;
+			text-decoration: none;
+			color: #333; /* default color for light mode */
+			background-color: #fff;
+			box-shadow: 0 3px 6px rgba(0,0,0,0.2); /* add a box shadow for depth effect */
+			transition: color 0.5s ease; /* add transition effect for link color */
+		}
+		.dark-mode .link {
+			color: #36454F; /* change link color for dark mode */
+		}
+		.link:hover {
+			box-shadow: 0 5px 10px rgba(0,0,0,0.3); /* increase box shadow on hover */
+			transform: translateY(-2px); /* move link up on hover */
+			background-color: #f0f0f0; /* change background color on hover */
+		}
+		h1 {
+			font-size: 36px;
+			font-weight: bold;
+			margin-top: 40px;
+			margin-bottom: 20px;
+			text-align: center;
+			text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* add shadow for text effect */
+		}
+		.switch {
+			position: relative;
+			display: inline-block;
+			width: 60px;
+			height: 34px;
+			margin-bottom: 20px;
+		}
+		.switch input {
+			display: none;
+		}
+		.slider {
+			position: absolute;
+			cursor: pointer;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #ccc;
+			transition: 0.4s;
+			border-radius: 34px;
+		}
+		.slider:before {
+			position: absolute;
+			content: "";
+			height: 26px;
+			width: 26px;
+			left: 4px;
+			bottom: 4px;
+			background-color: white;
+			transition: 0.4s;
+			border-radius: 50%;
+		}
+		input:checked + .slider {
+			background-color: #2196F3;
+		}
+		input:checked + .slider:before {
+			transform: translateX(26px);
+		}
+	</style>
+	<script>
+		function openInNewTab(url) {
+			window.open(url, '_blank');
+		}
+
+		function toggleDarkMode() {
+			var body = document.getElementsByTagName('body')[0];
+			body.classList.toggle('dark-mode');
+		}
+	</script>
 </head>
 <body>
-	<header>
-		<h1>Portfolio Hub</h1>
-	</header>
-	<main>
-		<section>
-			<h2>My Websites</h2>
-			<ul>
-				<li><a href="https://ironspider54.github.io/" target="_blank">Portfolio One</a></li>
-				<li><a href="https://example.com" target="_blank">WIP</a></li>
-				<li><a href="https://example.com" target="_blank">WIP</a></li>
-			</ul>
-		</section>
-	</main>
-	<footer>
-		<p>&copy; 2023 - Hub</p>
-	</footer>
+	<h1>My Hub Website</h1>
+	<a href="https://ironspider54.github.io/" class="link" target="_blank">My Portfolio</a>
+	<a href="#" class="link" onclick="openInNewTab('https://example.com')">Hub</a>
+	<a href="#" class="link" onclick="openInNewTab('https://example.com')">WIP</a>
+	<a href="#" class="link" onclick="openInNewTab('https://example.com')">WIP</a>
+
+	<label class="switch">
+  		<input type="checkbox" onclick="toggleDarkMode()">
+  		<span class="slider"></span>
+	</label>
 </body>
 </html>
